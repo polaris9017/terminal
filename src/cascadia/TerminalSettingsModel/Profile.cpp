@@ -62,6 +62,8 @@ static constexpr std::string_view PixelShaderPathKey{ "experimental.pixelShaderP
 
 static constexpr std::wstring_view DesktopWallpaperEnum{ L"desktopWallpaper" };
 
+static constexpr std::string_view ToggleDisableAltShiftKey{ "ToggleDisableAltShift" };
+
 Profile::Profile()
 {
 }
@@ -113,6 +115,8 @@ winrt::com_ptr<Profile> Profile::CopySettings(winrt::com_ptr<Profile> source)
     profile->_PixelShaderPath = source->_PixelShaderPath;
     profile->_BackgroundImageAlignment = source->_BackgroundImageAlignment;
     profile->_ConnectionType = source->_ConnectionType;
+
+    profile->_ToggleDisableAltShift = source->_ToggleDisableAltShift;
 
     return profile;
 }
@@ -339,6 +343,8 @@ void Profile::LayerJson(const Json::Value& json)
     JsonUtils::GetValueForKey(json, TabColorKey, _TabColor);
     JsonUtils::GetValueForKey(json, BellStyleKey, _BellStyle);
     JsonUtils::GetValueForKey(json, PixelShaderPathKey, _PixelShaderPath);
+
+    JsonUtils::GetValueForKey(json, ToggleDisableAltShiftKey, _ToggleDisableAltShift);
 }
 
 // Method Description:
@@ -531,6 +537,8 @@ Json::Value Profile::ToJson() const
     JsonUtils::SetValueForKey(json, TabColorKey, _TabColor);
     JsonUtils::SetValueForKey(json, BellStyleKey, _BellStyle);
     JsonUtils::SetValueForKey(json, PixelShaderPathKey, _PixelShaderPath);
+
+    JsonUtils::SetValueForKey(json, ToggleDisableAltShiftKey, _ToggleDisableAltShift);
 
     return json;
 }

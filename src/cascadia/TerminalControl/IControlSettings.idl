@@ -60,5 +60,7 @@ namespace Microsoft.Terminal.TerminalControl
         Boolean SoftwareRendering;
         String PixelShaderPath;
 
+        Boolean ToggleDisableAltShift;
+
     };
 }

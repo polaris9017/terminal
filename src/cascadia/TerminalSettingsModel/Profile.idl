@@ -190,5 +190,9 @@ namespace Microsoft.Terminal.Settings.Model
         Boolean HasBellStyle();
         void ClearBellStyle();
         BellStyle BellStyle;
+
+        Boolean HasToggleDisableAltShift();
+        void ClearToggleDisableAltShift();
+        Boolean ToggleDisableAltShift;
     }
 }

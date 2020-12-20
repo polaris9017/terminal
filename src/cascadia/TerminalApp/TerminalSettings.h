@@ -122,6 +122,8 @@ namespace winrt::TerminalApp::implementation
         GETSET_PROPERTY(bool, ForceVTInput, false);
 
         GETSET_PROPERTY(hstring, PixelShaderPath);
+
+        GETSET_PROPERTY(bool, ToggleDisableAltShift, false);
 #pragma warning(pop)
 
     private:

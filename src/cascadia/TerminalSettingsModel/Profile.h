@@ -114,6 +114,8 @@ namespace winrt::Microsoft::Terminal::Settings::Model::implementation
 
         GETSET_SETTING(Model::BellStyle, BellStyle, BellStyle::Audible);
 
+        GETSET_SETTING(bool, ToggleDisableAltShift, false);
+
     private:
         static std::wstring EvaluateStartingDirectory(const std::wstring& directory);
 
